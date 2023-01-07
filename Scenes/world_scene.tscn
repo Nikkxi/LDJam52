@@ -1,18 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://ryfth2q3dpw8"]
+[gd_scene load_steps=3 format=3 uid="uid://ryfth2q3dpw8"]
 
-[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_kidr7"]
-[ext_resource type="Texture2D" uid="uid://d3dvf3lk4fis0" path="res://icon.svg" id="2_3t6rp"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6aydd"]
-size = Vector2(128, 128)
+[ext_resource type="PackedScene" uid="uid://d0226v6brwlbe" path="res://Scenes/Player.tscn" id="1_jwhpf"]
+[ext_resource type="PackedScene" uid="uid://dlh75bdgnkedl" path="res://Scenes/Mouse.tscn" id="2_msrnj"]
 
 [node name="WorldScene" type="Node2D"]
 
-[node name="Player" type="CharacterBody2D" parent="."]
-script = ExtResource("1_kidr7")
+[node name="Player" parent="." instance=ExtResource("1_jwhpf")]
+position = Vector2(546, 327)
+scale = Vector2(2, 2)
+SPEED = 5.0
+ROTATION_SPEED = 3
 
-[node name="Sprite" type="Sprite2D" parent="Player"]
-texture = ExtResource("2_3t6rp")
-
-[node name="HitBox" type="CollisionShape2D" parent="Player"]
-shape = SubResource("RectangleShape2D_6aydd")
+[node name="Mouse" parent="." instance=ExtResource("2_msrnj")]
+position = Vector2(321, 327)
+scale = Vector2(2, 2)
